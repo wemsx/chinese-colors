@@ -14,7 +14,7 @@ const ICP = lazy(() => import('../components/ICP'));
 const Preview = lazy(() => import('../components/Preview'));
 import InfoModal from '../components/InfoModal';
 
-import { useModal, useColor, usePreview } from '../hooks';
+import { useInfoModal, useColor, usePreview } from '../hooks';
 
 const Wrapper = styled.section`
   height: 100vh;
@@ -56,7 +56,8 @@ const Wrapper = styled.section`
   }
 `;
 const Index = () => {
-  const { visible: modalVisible, showModal, closeModal } = useModal();
+  const { visible: modalVisible, showModal, closeModal } = useInfoModal();
+
   const { preview, showPreview, closePreview } = usePreview();
   const { sets, currSet, currColor, updateCurrColor, updateCurrSet } = useColor();
   console.log('page index');
